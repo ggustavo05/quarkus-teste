@@ -15,7 +15,7 @@ public class LinhaResource {
 
     //Busca a linha com o id
     @GET
-    @Path("{id}")
+    @Path("/{id}")
     public Response getLinhaById(@PathParam("id") int id) {
         return linhaService.buscarLinhaPorId(id)
                 .map(dto -> Response.ok(dto).build())

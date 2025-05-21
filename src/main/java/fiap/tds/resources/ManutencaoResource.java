@@ -23,7 +23,7 @@ public class ManutencaoResource {
 
     @GET
     @Path("/manutencoes/{id}")
-    public Optional<ManutencaoDto> buscarPorId(int id) {
+    public Optional<ManutencaoDto> buscarPorId(@PathParam("id") int id) {
         return manutencaoService.getManutencaoById(id);
     }
 
@@ -35,7 +35,7 @@ public class ManutencaoResource {
 
     @DELETE
     @Path("/delete-manutencoes/{id}")
-    public void deletarManutencao(int id) {
+    public void deletarManutencao(@PathParam("id") int id) {
         manutencaoService.deleteManutencao(id);
     }
 

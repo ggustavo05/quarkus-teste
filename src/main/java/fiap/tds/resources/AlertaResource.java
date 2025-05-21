@@ -30,7 +30,7 @@ public class  AlertaResource {
 
     //Buscar alerta por id
     @GET
-    @Path("alertas-by-id/{id}")
+    @Path("/alertas-by-id/{id}")
     public Response getAlertaPorId(@PathParam("id") int id) {
         return alertaService.buscarPorId(id)
                 .map(alertaDto -> Response.ok(alertaDto).build())
@@ -42,7 +42,7 @@ public class  AlertaResource {
 
     //Deletar alerta
     @DELETE
-    @Path("excluir-by-id/{id}")
+    @Path("/excluir-by-id/{id}")
     public Response excluirAlerta(@PathParam("id") int id) {
         boolean excluido = alertaService.excluir(id);
         if (excluido) {
